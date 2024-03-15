@@ -1,0 +1,10 @@
+﻿@page "/cargos/editar/{Id:int}"
+<h3>Editar Cargo</h3>
+@if (cargo is null)
+{
+    <Loading />
+}
+else
+{
+    <CargosForm @ref="cargosForm" Cargo="cargo" OnValidSubmit="EditAsync" ReturnAction="Return" />
+}

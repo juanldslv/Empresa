@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empresa.Backend", "Empresa.Backend\Empresa.Backend.csproj", "{8711A520-67EC-4124-977E-A149AD390047}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empresa.Backend", "Empresa.Backend\Empresa.Backend.csproj", "{8711A520-67EC-4124-977E-A149AD390047}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empresa.Frontend", "Empresa.Frontend\Empresa.Frontend.csproj", "{F30598F7-DB39-4702-9DD6-3B6E5F8EB6DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empresa.Frontend", "Empresa.Frontend\Empresa.Frontend.csproj", "{F30598F7-DB39-4702-9DD6-3B6E5F8EB6DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empresa.Shared", "Empresa.Shared\Empresa.Shared.csproj", "{C1DA0D2D-6349-4745-AB48-8EE5C2AC0342}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empresa.Shared", "Empresa.Shared\Empresa.Shared.csproj", "{C1DA0D2D-6349-4745-AB48-8EE5C2AC0342}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empresa.Test", "Empresa.Test\Empresa.Test.csproj", "{E48EC595-CBA3-47E1-B19B-70AC36085D9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empresa.Test", "Empresa.Test\Empresa.Test.csproj", "{E48EC595-CBA3-47E1-B19B-70AC36085D9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

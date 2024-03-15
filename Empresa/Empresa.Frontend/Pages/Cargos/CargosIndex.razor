@@ -1,0 +1,33 @@
+﻿@page "/cargos"
+<h3>Cargos</h3>
+<div class="mb-3">
+    <a class="btn btn-primary" href="/cargos/create">Nuevo Cargo</a>
+</div>
+<GenericList MyList="Cargos">
+    <Body>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre del posicion
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cargo in Cargos!)
+                {
+                    <tr>
+                        <td>
+                            @cargo.Nombre
+                        </td>
+                        <td>
+                            <a href="/cargos/editar/@cargo.Id_Cargo" class="btn btn-warning">Editar</a>
+                            <button class="btn btn-danger" @onclick=@(() => DeleteAsync(cargo))>Borrar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </Body>
+</GenericList>

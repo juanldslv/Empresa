@@ -1,0 +1,53 @@
+﻿<NavigationLock OnBeforeInternalNavigation="OnBeforeInternalNavigation" />
+<EditForm EditContext="editContext" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="mb-3">
+        <label>Nombre Empleado:</label>
+        <div>
+            <InputText   class="form-control" @bind-Value="@Empleado.Nombre" />
+            <ValidationMessage For="@(() => Empleado.Nombre)" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label>Cedula Empleado:</label>
+        <div>
+            <InputNumber class="form-control" TValue="int?"  @bind-Value="@Empleado.Cedula" />
+            <ValidationMessage For="@(() => Empleado.Cedula)" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label>Fecha Ingreso Empleado:</label>
+        <div>
+            <InputDate class="form-control" TValue="DateTime" @bind-Value="@Empleado.Fecha_Ingreso" />
+            <ValidationMessage For="@(() => Empleado.Fecha_Ingreso)" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label>Foto Empleado:</label>
+        <div>
+            <img src="@Empleado.Foto" />
+            <InputFile class="form-control" @bind-Value="@Empleado.Foto"  />
+            <ValidationMessage For="@(() => Empleado.Foto)" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label> Cargo Empleado:</label>
+        <div>
+            <Select  class="form-select" onchange="@CargoAsyc()" >
+                <option value="0">----Seleccione Cargo----</option>
+                @if(Cargos is not null)
+                {
+                    @foreach(var cargo in Cargos)
+                    {
+                        <option value="@cargo.Id_Cargo" selected="@(cargo.Id_Cargo==Empleado!.Id_Cargo)">@cargo.Nombre</option>
+                    }
+                }
+            </Select>
+
+            
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Guardar Cambios</button>
+    <button class="btn btn-success" @onclick="ReturnAction">Regresar</button>
+</EditForm>
+

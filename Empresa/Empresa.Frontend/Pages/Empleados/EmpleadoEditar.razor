@@ -1,0 +1,10 @@
+﻿@page "/empleados/editar/{Id:int}"
+<h3>Empleado Editar</h3>
+@if (empleado is null)
+{
+    <Loading/>
+}
+else
+{
+    <EmpleadosForm @ref="empleadosForm" Empleado="empleado" OnValidSubmit="EditAsync" ReturnAction="Return" />
+}

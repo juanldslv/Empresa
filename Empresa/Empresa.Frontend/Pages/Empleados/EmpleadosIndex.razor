@@ -1,0 +1,74 @@
+﻿@page "/empleados"
+<h3>Empleados</h3>
+<div class="mb-3">
+    <a class="btn btn-primary" href="/empleados/create">Nuevo Empleado</a>
+</div>
+<GenericList MyList="Empleados">
+    <Body>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre del Empleado
+                    </th>
+                    <th>
+                        Cedula
+                    </th>
+                    <th>
+                        Fecha Ingreso
+                    </th>
+                    <th>
+                        Foto
+                    </th>
+                    <th>
+                        Cargo
+                    </th>
+                    <th>
+                        Opciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var empleado in Empleados!)
+                {
+                    <tr>
+                        <td>
+                            @empleado.Nombre
+                        </td>
+                        <td>
+                            @empleado.Cedula
+                        </td>
+                        <td>
+                            @empleado.Fecha_Ingreso.ToShortDateString()
+                        </td>
+                        <td>
+                            <img src="@empleado.Foto" alt="@empleado.Nombre" height="300">
+                        </td>
+                        
+                            @if(empleado.Id_Cargo==2)
+                                {<td>
+                                    Desarrollador
+                            </td>
+                        }
+                        else if (empleado.Id_Cargo==3)
+                        {
+                            <td>
+                                QA
+                            </td>
+                        }
+                        else if (empleado.Id_Cargo == 5)
+                        {
+                            <td>
+                                PO
+                            </td>
+                        }
+                        <td>
+                            <a href="/empleados/editar/@empleado.Id" class="btn btn-warning">Editar</a>
+                            <button class="btn btn-danger" @onclick=@(() => DeleteAsync(empleado))>Borrar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </Body>
+</GenericList>
